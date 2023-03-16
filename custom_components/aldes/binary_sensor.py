@@ -42,8 +42,8 @@ class AldesBinarySensorEntity(AldesEntity, BinarySensorEntity):
         return DeviceInfo(
             identifiers={(DOMAIN, self.product_serial_number)},
             manufacturer=MANUFACTURER,
-            name=f"{self.reference} {self.product_serial_number}",
-            model=[self.reference],
+            name=f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number}",
+            model=FRIENDLY_NAMES[self.reference],
         )
 
     @property
